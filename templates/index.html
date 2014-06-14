@@ -1,18 +1,18 @@
   {% extends 'base.html' %}
   {% block body %}
-    {% for user, votes in votes.items() %}
+    {% for user in votes %}
     <div class="row pm">
         <div class="col-md-10">
-            <h2>{{user}}<h2>
+            <h2>{{user.user}}<h2>
         </div>
         <div class="col-md-2">
-            <div class="topic upvote" data-name="{{user}}">
+            <div class="topic upvote" data-name="{{user.user}}">
                 <a class="upvote up" ></a>
-                <span class="count">{{votes}}</span>
+                <span class="count">{{user.votes}}</span>
                 <a class="downvote down"></a>
             </div>
         </div>
-    </div>
-    {% endfor %}
+    </div> 
+    {% endfor %} 
   {% endblock %}
 

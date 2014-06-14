@@ -7,17 +7,25 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     users = db.get_users()
-    votes = {}
+    vote_list = []
     for user in users:
-        votes[user] = db.get_votes(user)
-    return render_template('index.html', votes=votes)
+        votes = {}
+        votes['user'] = user
+        votes['votes'] = db.get_votes(user)
+        vote_list.append(votes)
+    sorted_list = sorted(vote_list, key=lambda k: k['votes'])
+    sorted_list.reverse()
+
+    return render_template('index.html', votes=sorted_list)
 
 @app.route("/test")
 def test():
     return db.test()
+
 @app.route('/idiot', methods=['GET'])
 def render_idiot():
     return render_template('user.html')
+
 @app.route('/add_idiot', methods=['POST'])
 def add_user():
     if request.method == 'POST':

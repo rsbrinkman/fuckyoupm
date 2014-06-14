@@ -27,7 +27,8 @@ $(document).ready( function() {
         user: name
       },
       success: function() {
-        console.log('success');
+        $('.results').empty();
+        $('.results').append('PM Added!!');
       }   
     }); 
   }); 
