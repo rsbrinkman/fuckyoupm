@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fuck You PM</title>
+  {% block css %}
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/jquery.upvote.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/main.css"/>
+  {% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="row">
+    <div class="col-md-4">
+        <a href="/"><h1>Fuck You PM</a>
+    </div>
+    <div class="col-md-8">
+    </div>
+  </div>
+  <hr>
+  <div class="underline"></div>
+{% block body %}
+{% endblock %}
+{% block js %}
+    <script src="static/js/jquery-2.0.3.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/underscore-min.js"></script>
+    <script src="static/js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="static/js/jquery.dataTables.js"></script>
+    <script src="static/js/jquery.cookie.js"></script>
+    <script src="static/js/jquery.upvote.js"></script>
+    <script src="static/js/main.js"></script>
+  {% endblock %}
+</body>
+</html>

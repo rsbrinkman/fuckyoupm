@@ -1,0 +1,18 @@
+  {% extends 'base.html' %}
+  {% block body %}
+    {% for user, votes in votes.items() %}
+    <div class="row pm">
+        <div class="col-md-10">
+            <h2>{{user}}<h2>
+        </div>
+        <div class="col-md-2">
+            <div class="topic upvote" data-name="{{user}}">
+                <a class="upvote up" ></a>
+                <span class="count">{{votes}}</span>
+                <a class="downvote down"></a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+  {% endblock %}
+
